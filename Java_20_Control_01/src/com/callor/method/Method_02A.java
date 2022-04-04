@@ -71,11 +71,11 @@ public class Method_02A {
 	 * */
 	int intNum1 = 0;
 	return 0;
-	int intNum1 = 0;
+	int intNum2 = 0;
 	intNum1 = 300+400;
 	
 	//main() 에서  intNum1  변수의 값을 사용할수 있도록
 	//intNum1 변수의 값을 return한다
-
+}
 
 }
