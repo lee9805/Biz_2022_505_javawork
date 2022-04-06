@@ -1,6 +1,6 @@
 package com.callor.controller;
 
-public class ControlV3 {
+public class ControllerV3 {
 
 	public static void main(String[] args) {
 		
