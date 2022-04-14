@@ -38,7 +38,7 @@ public class ScoreServiceV5 {
 		int intSum = 0;
 		for (int i = 0; i < intKor.length; i++) {
 			intSum += intKor[i];
-			System.out.printf("%d : %d\t", (i + 1), intKor[i]);
+			System.out.printf("%d 번째 : %d\t", (i + 1), intKor[i]);
 			if ((i + 1) % 5 == 0) {
 				System.out.println();
 			}
