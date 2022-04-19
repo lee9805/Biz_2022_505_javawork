@@ -60,26 +60,20 @@ public class ScoreServiceV1 {
 	}
 	public void sumScore() {
 		int sum1 = 0;
+		int sum2 = 0;
+		int sum3 = 0;
+		int sum4 = 0;
+		float sum5 = 0;
+		
 		for(int i = 0; i< scores.length; i++) {
 		sum1 += scores[i].getIntKor();
+		sum2 += scores[i].getIntEng();
+		sum3 += scores[i].getIntMath();
+		sum4 += scores[i].getIntSum();
+		sum5 += scores[i].getfAvg();
 		}
-		int sum2 = 0;
-		for(int i = 0; i< scores.length; i++) {
-			sum2 += scores[i].getIntEng();
-		}
-		int sum3 = 0;
-		for(int i = 0; i< scores.length; i++) {
-			sum3 += scores[i].getIntMath();
-		}
-		int sum4 = 0;
-		for(int i = 0; i< scores.length; i++) {
-			sum4 += scores[i].getIntSum();
-		}
-		float sum5 = 0;
-		for(int i = 0; i< scores.length; i++) {
-			sum5 += scores[i].getfAvg();
-		}
-		System.out.printf("총점 : %d\t %d\t %d\t %d\t %f\t",sum1,sum2,sum3,sum4,sum5);
+		
+		System.out.printf("총점 : %d\t %d\t %d\t %d\t %.2f\t",sum1,sum2,sum3,sum4,sum5);
 		
 		
 		
