@@ -55,7 +55,6 @@ public class ScoreServiceV1 {
 			System.out.print(scores[i].getIntSum() + "\t");
 			System.out.printf("%3.2f\n",scores[i].getfAvg());
 		}
-		System.out.println();
 		System.out.println(Line.sLine(50));
 	}
 	public void sumScore() {
@@ -73,7 +72,7 @@ public class ScoreServiceV1 {
 		sum5 += scores[i].getfAvg();
 		}
 		
-		System.out.printf("총점 : %d\t %d\t %d\t %d\t %.2f\t",sum1,sum2,sum3,sum4,sum5);
+		System.out.printf("총점 : %d\t%d\t%d\t%d\t%.2f\t",sum1,sum2,sum3,sum4,sum5);
 		
 		
 		
