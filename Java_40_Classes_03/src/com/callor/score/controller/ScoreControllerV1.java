@@ -8,7 +8,6 @@ public class ScoreControllerV1 {
 		ScoreServiceV1 serviceV1 = new ScoreServiceV1(stNames);
 		serviceV1.makeScore();
 		serviceV1.printScore();
-		serviceV1.sumScore();
 	}
 
 
