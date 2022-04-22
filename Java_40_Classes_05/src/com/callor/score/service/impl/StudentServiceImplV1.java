@@ -10,7 +10,7 @@ import com.callor.score.service.StudentService;
 
 public class StudentServiceImplV1 implements StudentService {
 
-	private StudentVO[] stVO;
+	private StudentVO[] stList;
 	private String stFile;
 	
 	/*
@@ -19,9 +19,9 @@ public class StudentServiceImplV1 implements StudentService {
 	
 	public StudentServiceImplV1(String stFile, int length) {
 		this.stFile= stFile;
-		this.stVO = new StudentVO[length];
-		for(int i = 0; i < this.stVO.length ; i++) {
-			this.stVO[i] = new StudentVO();
+		this.stList = new StudentVO[length];
+		for(int i = 0; i < this.stList.length ; i++) {
+			this.stList[i] = new StudentVO();
 		}
 	}
 	
@@ -48,27 +48,42 @@ public class StudentServiceImplV1 implements StudentService {
 			System.out.println(stLine);
 		}
 		*/
+		int index = 0;// stList의 요소
 		while(scan.hasNext() ) {
 			String stLine = scan.nextLine();
 			System.out.println(stLine);
 			String[] stInfos = stLine.split(":");
 			
-			System.out.println("학번" + stInfos[0]);
-			System.out.println("이름" + stInfos[1]);
-			System.out.println("학년" + stInfos[2]);
-			System.out.println("학과" + stInfos[3]);
-			System.out.println("주소" + stInfos[4]);
+			System.out.println("학번 " + stInfos[0]);
+			System.out.println("이름 " + stInfos[1]);
+			System.out.println("학년 " + stInfos[2]);
+			System.out.println("학과 " + stInfos[3]);
+			System.out.println("주소 " + stInfos[4]);
 			
-			StudentVO vo = new StudentVO();
-			vo.setStName(stInfos[0]);
-			vo.setStName(stInfos[1]);
-			vo.setStGrade(stInfos[2]);
-			vo.setStDept(stInfos[3]);
-			vo.setStAddr(stInfos[4]);
-		}
+			StudentVO stVO = new StudentVO();
+			stVO.setStName(stInfos[0]);
+			stVO.setStName(stInfos[1]);
+			stVO.setStGrade(stInfos[2]);
+			stVO.setStDept(stInfos[3]);
+			stVO.setStAddr(stInfos[4]);
+			
+			stList[index++] = stVO;
+		}//end while 여기를 지나면stList 에 모든 데이터가 담겨 있을것이다
+		this.printStudents();
 		
-	}
+	}//end loadStudent
 
+	//v1 클래스에서 stList 에 담긴 데이터드을 확인하기 위햐여
+	//내부용이르ㅗ 만든 method
+	private void printStudents() {
+
+		for(int i =0; i< stList.length; i++) {
+			System.out.println(stList[i].toString());
+		}
+		for(StudentVO vo : stList) {
+			System.out.println(vo.toString());
+		}
+	}
 	@Override
 	public StudentVO[] getStudents() {
 		
