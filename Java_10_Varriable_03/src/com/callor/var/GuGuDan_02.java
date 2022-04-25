@@ -6,7 +6,6 @@ public class GuGuDan_02 {
 		
 		int intDan = 8;
 		int intIndex = 1;
-		
 		/*
 		 * 미리 출력할 모양을 만들고 ("%d * %d = %d") 뒤에 
 		 * 나열된 값을 수선대로 %d 대신 부착하여 Console 에 출력하기
@@ -35,9 +34,5 @@ public class GuGuDan_02 {
 		System.out.printf("\t%d * %d = %d\n", intDan, intIndex, intDan * intIndex++);
 		System.out.printf("\t%d * %d = %d\n", intDan, intIndex, intDan * intIndex++);
 		System.out.printf("\t%d * %d = %d\n", intDan, intIndex, intDan * intIndex++);
-		
-		
-
 	}
-
 }

@@ -17,5 +17,4 @@ public class Var_03 {
 		long longNum1 = 0;
 		longNum1 = 999_999_999_999_999_999L;
 	}
-
 }

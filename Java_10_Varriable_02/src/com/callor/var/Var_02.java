@@ -8,14 +8,12 @@ public class Var_02 {
 		 * maim() {}블럭이 끝나는 시점에 모두 소멸된다
 		 */
 		int intNum2 = 0;
-		
 		intNum1 = 77; // 변수에 값을 할당, 대입, 저장
 		/*
 		 * 이명령문이 실해되는 순간
 		 * 이전에 변수에 어떤 일이 있던지 상관없이 모든 값이 clear 되고
 		 * intNum1 변수에는 55에만 담겨 있다		
 		 */
-		
 		intNum2 = 33;
 		// 이 명령문을 만나면 
 		//1. intNum1 에 저장된 값을 읽어온다
@@ -36,7 +34,6 @@ public class Var_02 {
 		System.out.println( "55 - 33 = " + (intNum1 - intNum2));
 		System.out.println( "55 / 33 = " + (intNum1 / intNum2));
 		//문자열과 문자열은 오직 +만 계산된다
-
 		/*
 		 * 블럭( { } ) 내에서 선언하고 값이 할당왼 변수가 있을때
 		 * 변수에서 값을 읽어서 연산을 수행하는데
@@ -46,7 +43,6 @@ public class Var_02 {
 		 * 다만, 어딘선가 변수에 또다른 값을 할당하면
 		 * 변수 값이 변하게 된다.
 		 */
-		
 	    int intNum3= 1000;
 	    System.out.println(intNum3);
 	    System.out.println(intNum3);
@@ -54,7 +50,6 @@ public class Var_02 {
 	    System.out.println(intNum3);
 	    System.out.println(intNum3);
 	    System.out.println(intNum3);
-	
 	} //main()이 끝나는 곳
 	/*
 	 * main() {} 블럭의 밖에서는 명렴문을 사용할수 없다 또한 intNum3 변수도 사용(읽기 저장)할 수 없다

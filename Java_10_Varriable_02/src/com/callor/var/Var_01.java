@@ -17,17 +17,14 @@ public class Var_01 {
 		
 		num1= 55; /* 대입하기 */
 		num2= 33;
-		
 		/*
 		 * 위에 선언과 대입를 동시 표기
 		 * int num = 55; 
 		 * int num = 33;
 		 */		
-		
 		System.out.println(num1 + num2);
 		System.out.println(num1 - num2);
 		System.out.println(num1 * num2);
 		System.out.println(num1 / num2);
 	}
-
 }
