@@ -30,7 +30,5 @@ public class Boolean_01 {
 		} else if(bLT) {
 			System.out.printf("\t%d 와 %d 보다 작다\n" , intNum1, intNum2);
 		}
-		
-		
 	}
 }
