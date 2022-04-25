@@ -19,7 +19,6 @@ public class Var_01 {
 		 * 두개의 비교대상이 같지 않냐? 라고 묻는다
 		 */
 		System.out.printf("\t num1 <> num2 " + (intNum1 != intNum2));
-		
 		/*
 		 * Literal(리터럴) : 값을 명확히 확인할수 있는 값
 		 * 일반적인 숫자값 "문자열"
@@ -29,5 +28,4 @@ public class Var_01 {
 		System.out.println(30 == 30);
 		System.out.println(30 > 30);
 	}
-
 }
