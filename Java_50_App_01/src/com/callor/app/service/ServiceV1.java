@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceV1 {
-
 	// final : 이 변수는 딱 한번만 값을 저장할 수 있다
 	//하지만 class type 의 변수는 그러하지 않는 경우도 있다
 	//class  type 의 변수에  final 을 선언하는 이유는
@@ -17,7 +16,6 @@ public class ServiceV1 {
 	public ServiceV1() {
 		intList = new ArrayList<>();
 	}
-	
 	public void makeScore() {
 		for(int i = 0; i< 10 ; i++ ) {
 			Integer rnd = (int)(Math.random() * 100) +1;
