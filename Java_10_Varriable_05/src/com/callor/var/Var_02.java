@@ -4,7 +4,6 @@ public class Var_02 {
 	
 	public static void main(String[] args) {
 		
-		
 		double doNum1 = 0;
 		double doNum2 = 0;
 
@@ -15,7 +14,6 @@ public class Var_02 {
 		double doDes = doNum1 - doNum2;
 		double doMulti = doNum1 * doNum2;
 		double doDiv = doNum1 / doNum2;
-		
 		/* printf() 를 사용하여 3개 변수에 담긴 데이터를 console 에 출력하기
 		 * "%d+%d=%d" form String을 사용하여 출력할 모양을 지정하고
 		 * 각각$d 위치에 표현할 데이터를 3개 나열했다
@@ -31,14 +29,11 @@ public class Var_02 {
 		 * 사용하여 표현해야 한다
 		 */
 		System.out.printf("\t%f + %f =%f\n", doNum1, doNum2, doSum);
-		
 		//%.2f : 정수부분은 모두 표현하고 소수점이하 2째자리까지 출력하라
 		System.out.printf("\t%.2f + %.2f =%.2f\n", doNum1, doNum2, doSum);
-
 		System.out.println("\t==============================");
 		System.out.printf("\t%.2f + %.2f =%.2f\n", doNum1, doNum2, doSum);
 		System.out.printf("\t%.2f * %.2f =%.2f\n", doNum1, doNum2, doMulti);
-
 		/* %8.2f : 전체 자릿수를 8개로 하고 소수점이하 2째자리 표현
 		 * 만약 데이터가 전체 자릿수 보다 작으면 남은 부분을 공백으로 표현
 		 * 숫자를 오른쪽으로 정렬할때 사용하는 방법
@@ -50,13 +45,5 @@ public class Var_02 {
 		System.out.println("\t==============================");
 		System.out.printf("\t%.2f + %.2f =%8.2f\n", doNum1, doNum2, doSum);
 		System.out.printf("\t%.2f * %.2f =%8.2f\n", doNum1, doNum2, doMulti);
-		
-		
-		
-		
-		
-		
-	
 	}
-
 }
