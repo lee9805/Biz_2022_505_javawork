@@ -9,7 +9,6 @@ package com.callor.hello;
 // 지금 작성하는 소스코드는 HelloKorea.java 파일이다.
 //HelloKorea.java를 클래스파일 또는 자바소스코드 라고 한다.
 public class HelloKorea {
-
 	/*
 	 * main 키워드 + Ctrl +Space : 상용구 작성
 	 * @param args
@@ -19,7 +18,6 @@ public class HelloKorea {
 	 *"반갑습니다"-> ""로 묶인 문자를 문자열이라고 말함
 	 *() 안에 들어가는 숫자를 연산이라고 한다.
 	 */
-
 	public static void main(String[] args) {
 		System.out.println("반갑습니다");
 		System.out.println(30 + 40);

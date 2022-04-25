@@ -14,5 +14,4 @@ public class GuGuDan {
 		System.out.println("3 * 9 =" + 3*9);
 		System.out.println("====================");		
 	}
-
 }
