@@ -32,8 +32,6 @@ public class Var_01 {
 		System.out.printf("\t%d - %d = %d\n", intNum1, intNum2, intMinus);
 		System.out.printf("\t%d × %d = %d\n", intNum1, intNum2, intMultipule);
 		System.out.printf("\t%d ÷ %d = %d\n", intNum1, intNum2, intDivition);
-		
-
 	}
 
 }
