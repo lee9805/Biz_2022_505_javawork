@@ -24,12 +24,10 @@ public class Var_01 {
 		int num1= 255;
 		int num2= 88;
 		
-		
 		System.out.println(num1 + num2);
 		System.out.println(num1 * num2);
 		System.out.println(num2 - num1);
 		System.out.println(num2 / num1);
-		
 		
 		System.out.println(40.0 / 30.0);
 		
@@ -57,7 +55,6 @@ public class Var_01 {
 		System.out.println(num5);
 		
 		int num11 = 0;
-	
 		/* 
 		 * 변수 명명규칙과 패턴
 		 * 1. 첫글자는 무조건 소문자
@@ -69,7 +66,6 @@ public class Var_01 {
 		 *    변수의 type으로 만드는 것이 좋다
 		 *    => 헝가리언 표기법
 		 */
-		
 		int intNum1 =0;
 		/*
 		 * 좋은 변수 이름 짓기
@@ -77,13 +73,11 @@ public class Var_01 {
 		 * 변수명만 보고 어떤 데이터가 담겨 있는지 
 		 * 유추할수 있도록 하자
 		 */
-		
 		int intStNum = 1738023; //학번이 저장된 변수
 		int intTelNum = 0107153; //전화번호로 저장된 변수
 		int intStAge = 25; //학생 나이로 저장된 변수
 
 		System.out.println(intTelNum + intStNum);
-		
 	}
 
 }

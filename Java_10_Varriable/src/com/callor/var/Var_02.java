@@ -24,8 +24,6 @@ public class Var_02 {
 		//전에 있는 어떤 숫자든 마지막 초기화를 하면 
 		//전에 숫자는 삭제되고 마지막 초기화만 남는다.
 		System.out.println(num5);
-		
-		
 	}
 
 }
