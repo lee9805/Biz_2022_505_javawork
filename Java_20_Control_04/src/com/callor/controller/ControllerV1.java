@@ -9,7 +9,5 @@ public class ControllerV1 {
 		ServiceV1 serviceV1 = new ServiceV1();
 
 		serviceV1.guguDan();
-
 	}
-
 }
