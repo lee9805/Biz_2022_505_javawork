@@ -9,8 +9,6 @@ public class ScoreControllerV1 {
 		ScoreServiceV1 v1 = new ScoreServiceV1(3);
 		v1.input();
 		v1.print();
-		
-		
 	}
 
 }
