@@ -8,7 +8,6 @@ public class ControllerV4 {
 
 		ServiceV4 serviceV4 = new ServiceV4();
 		serviceV4.scorePrint();
-		
 	}
 
 }
