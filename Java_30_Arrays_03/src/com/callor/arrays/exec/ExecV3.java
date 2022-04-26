@@ -9,12 +9,11 @@ public class ExecV3 {
 			intNum[i] = (int) (Math.random() * 100) + 1;
 		}
 
-		//짝수의 개수를 세어서 저장할 변수
+		// 짝수의 개수를 세어서 저장할 변수
 		int intEvenCount = 0;
 		for (int i = 0; i < intNum.length; i++) {
 			boolean bEven = (intNum[i] % 2) == 0;
 
-			
 			if (bEven) {
 				intEvenCount++;
 			}
