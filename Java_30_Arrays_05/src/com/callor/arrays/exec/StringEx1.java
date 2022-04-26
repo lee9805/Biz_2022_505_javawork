@@ -46,8 +46,6 @@ public class StringEx1 {
 		// 대소문자를 무시하고 문자열을 비교하라
 		// 단, 띄어쓰기는 무시 하지 않는다
 		bYes = strNation.equalsIgnoreCase("rePunblic oF KOREA");
-		
-		
 	}
 }
 
