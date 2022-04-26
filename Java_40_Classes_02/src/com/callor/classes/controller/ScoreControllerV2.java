@@ -8,9 +8,9 @@ public class ScoreControllerV2 {
 
 		ScoreServiceV2 v2 = new ScoreServiceV2(3);
 		int intResult = v2.input();
-		if(intResult < 0) {
+		if (intResult < 0) {
 			System.out.println("입력을 중단했습니다");
-		}else {
+		} else {
 			System.out.println("입력을 모두 완료했습니다");
 		}
 	}
