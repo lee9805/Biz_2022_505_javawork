@@ -3,18 +3,14 @@ package com.callor.controller;
 import com.callor.service.ServiceV1;
 import com.callor.service.ServiceV2;
 
-
-
 public class Method_04 {
 
 	public static void main(String[] args) {
-		
 		/*
 		 *  ServiceV1 클래스에 선언된 add(), multi () 는
 		 *  static 으로 선언되었다
 		 */
 		int intSum1 = ServiceV1.add();
-		
 		/*
 		 * ServiceV2 class type 으로 변수 선언하기
 		 * 여기에서 ServiceV2 클래스는 이 프로젝트에서
@@ -50,12 +46,5 @@ public class Method_04 {
 		//초기화(new ServiceV2())를 실행하여
 		//sV4가 인스턴스가 되었다
 		sV4 = new ServiceV2();
-		
-		
-		
-		
-		
-		
-	
 	}
 }
