@@ -51,11 +51,6 @@ public class CatingEx01 {
 		intNum1 =0;
 		intNum1 +=3.123123;
 		System.out.println(intNum1);
-		
-		
-		
-		
-		
 	}
 
 }
