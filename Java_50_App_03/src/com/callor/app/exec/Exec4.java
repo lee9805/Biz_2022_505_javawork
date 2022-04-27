@@ -15,9 +15,9 @@ public class Exec4 {
 		   System.out.println(num+" 소수가 아니다"); //"소수가 아니다"라고 나온다 
 		  } else{  // 그렇지 않다면
 		   for( i = 2 ; i <= m ; i++){  // i의 2는 m 보다 작거나 같을경우 1씩 커지고     
-		    if( num % i == 0 ){      
-		     System.out.println(num+"소수가 아니다");      
-		     flag = 1;      
+		    if( num % i == 0 ){ // num의 숫자를 i로 나눴을때 0일 경우
+		     System.out.println(num+"소수가 아니다");//"소수가 아니다"라고 나온다
+		     flag = 1;   
 		     break;      
 		    }      
 		   }      
