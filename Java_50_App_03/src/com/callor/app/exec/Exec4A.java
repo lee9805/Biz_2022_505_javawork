@@ -16,9 +16,9 @@ public class Exec4A {
 			}
 		}
 		if(count == 0) {
-			System.out.println(num + "소수 이다");
+			System.out.println(num + "은(는) 소수 이다");
 		}else {
-			System.out.println(num +"소수가 아니다");
+			System.out.println(num +"은(는) 소수가 아니다");
 		}
 	}
 }
