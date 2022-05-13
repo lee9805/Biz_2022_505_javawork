@@ -12,6 +12,18 @@ public class TodoServiceImplV2 extends TodoServiceImplV1 {
 		super();
 		loadTodoList();
 	}
+	/*
+	 * 저장된 todolist.txt 파일을 읽어서
+	 * todoList 에 추가하기
+	 * 
+	 * todolist.txt 파일 열기
+	 * 			열기할 파일은 V1의 saveFileName 에 저장되어 있다
+	 * 한라인씩 읽어서
+	 * 컴마(,) 기준으로 split하고 
+	 * todoVOdp 담고 
+	 * todoList에 추가
+	 * 		V1 의 todoList객체가 생성되어 있다
+	 */
 
 	protected void loadTodoList() {
 
@@ -40,7 +52,7 @@ public class TodoServiceImplV2 extends TodoServiceImplV1 {
 			// 파일로 부터 한 라인을 읽어서 line 변수에 담기
 			String line = scan.nextLine();
 
-			// 읽어들인 line 을 컴마(,) 기준으로 분해(splite)
+			// 읽어들인 line 을 컴마(,) 기준으로 분해(split)
 			// 분해한 결과는 String 형 배열 모양이다
 			String[] todo = line.split(",");
 			//text 파일에 데이터를 저장하면 마지막에

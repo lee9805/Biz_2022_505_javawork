@@ -50,7 +50,7 @@ public class TodoServiceImplV1 implements TodoService{
 		
 		//Date 객체의 값을 날짜, 시각 문자열 타입으로 변경하기 위한
 		//객체 생성
-		SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY-MM-DD");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
 		
 		//현재 날짜, 시각에 해당하는 문자열 새엇ㅇ하기
@@ -153,16 +153,27 @@ public class TodoServiceImplV1 implements TodoService{
 		String eDate = local.format(toDateFomat);
 		String eTime = local.format(toTimeFomat);
 		
-		TodoVO tVO = todoList.get(index);
+		
+		try {
+			TodoVO tVO = todoList.get(index);
+			
+			eDate = tVO.getEdate() == null || tVO.getEdate().isEmpty() 
+					? eDate : null;
+			
+			eTime = tVO.getEtime() == null || tVO.getEtime().isEmpty() 
+					? eTime : null;
+			
+			tVO.setEdate(eDate);
+			tVO.setEtime(eTime);
+		} catch (Exception e) {
+			System.out.println("TODO List 데이터 범위를 벗어났습니다");
+		}
 		
 		/*
 		 * eDate = tVO.getEdate() == null || tVO.getEdate().isEmpty() ? eDate : null;
 		 * 
 		 * eTime = tVO.getEtime() == null || tVO.getEtime().isEmpty() ? eTime : null;
 		 */	
-		
-		tVO.setEdate(eDate);
-		tVO.setEtime(eTime);
 		
 	}
 
