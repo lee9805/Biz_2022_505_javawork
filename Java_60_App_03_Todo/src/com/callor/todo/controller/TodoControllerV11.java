@@ -34,7 +34,6 @@ public class TodoControllerV11 {
 			}
 		}
 		System.out.println("업무종료 야 ~~퇴근이다");
-		
 	}
 
 }

@@ -1,6 +1,13 @@
 package com.callor.todo.service.impl;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -11,10 +18,18 @@ import com.callor.todo.service.TodoService;
 
 public class TodoServiceImplV1 implements TodoService{
 
-	private final List<TodoVO> todoList;
+	protected final String saveFileName;
+	protected final List<TodoVO> todoList;
+
 	public TodoServiceImplV1() {
-		todoList = new ArrayList<>();
+		this("src/com/callor/todo/model/todolist.txt");
 	}
+	
+	public TodoServiceImplV1(String saveFileName) {
+		todoList = new ArrayList<>();
+		this.saveFileName = saveFileName;
+	}
+
 	/*
 	 * 매개변수로 content(할일) 내용을 전달받아
 	 * key, 추가날짜, 시간를 생성한 후 TodoVO에 담고
@@ -83,8 +98,71 @@ public class TodoServiceImplV1 implements TodoService{
 	}
 
 	@Override
-	public void saveTodo(String fileName) {
+	public void saveTodo(String fileName) throws IOException {
 		
+		FileWriter writer = null;
+		PrintWriter out = null;
+		
+		writer = new FileWriter(saveFileName);
+		out = new PrintWriter(writer);
+		
+		for(TodoVO vo : todoList) {
+			out.printf("%s,", vo.getTKey());
+			out.printf("%s,", vo.getSdate());
+			out.printf("%s,", vo.getStime());
+			out.printf("%s,", vo.getEdate());
+			out.printf("%s,", vo.getEtime());
+			out.printf("%s\n", vo.getTContent());
+		}
+		//buffer 에 남아있는 데이터를 강제로 파일에 기록
+		out.flush();
+		
+		//열려있는 파일 resource를 닫기
+		//파일에 저장하는 코드에서는 
+		//반드시 마지막에 close를 해야한다
+		out.close();
+		writer.close();
+		
+	}
+	/*
+	 * TODO완료하기
+	 * 매개변수로 전달 받은 num값은 List요소의 식제 값보다 1만큼 크다
+	 * num값이 4라면 실제로를 3번 요소를 선택한 것이다
+	 * 
+	 * 선택한 요소의 edate, etaim 부분을 현재 시스템의 날짜와 시간을 사용하여
+	 * 문자열로 바꾼다음 setting
+	 */
+	@Override
+	public void compTodo(Integer num) {
+		int index = num -1;
+		
+		//java 1.8 부터 사용하는 새로운 날짜 시간 관련 클래스
+		//Date, Calendar  클래스의 날짜와 관련된 많은 이슈때문에
+		//새롭게 디자인 되고 만들어진 클래스이다
+		//객체를 새로 생성하는 것이 아니고
+		//now() 라는 static 메서드를 호출하여 가져다 쓰는 구조다
+		//현재 시점의 날짜와 시간
+		LocalDateTime local = LocalDateTime.now();
+		LocalDate localDate = LocalDate.now(); //현재 날짜만 
+		LocalTime localTime = LocalTime.now(); //현재 시간만
+		
+		//날짜형의 문자열로 변환하기
+		DateTimeFormatter toDateFomat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		DateTimeFormatter toTimeFomat = DateTimeFormatter.ofPattern("hh:mm:ss");
+		
+		String eDate = local.format(toDateFomat);
+		String eTime = local.format(toTimeFomat);
+		
+		TodoVO tVO = todoList.get(index);
+		
+		/*
+		 * eDate = tVO.getEdate() == null || tVO.getEdate().isEmpty() ? eDate : null;
+		 * 
+		 * eTime = tVO.getEtime() == null || tVO.getEtime().isEmpty() ? eTime : null;
+		 */	
+		
+		tVO.setEdate(eDate);
+		tVO.setEtime(eTime);
 		
 	}
 

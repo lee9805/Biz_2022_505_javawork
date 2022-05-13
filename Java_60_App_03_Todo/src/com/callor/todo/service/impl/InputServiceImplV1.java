@@ -7,7 +7,7 @@ import com.callor.utils.Line;
 
 public class InputServiceImplV1 implements InputService {
 
-	private final Scanner scan;
+	protected final Scanner scan;
 
 	public InputServiceImplV1() {
 		scan = new Scanner(System.in);
@@ -23,7 +23,8 @@ public class InputServiceImplV1 implements InputService {
 		System.out.println("2. TODO List 보기");
 		System.out.println("3. key로 검색하기");
 		System.out.println("4. 완료하기");
-		System.out.println("5. 종료하기");
+		System.out.println("5. 파일에 저장하기");
+		System.out.println("6. 종료하기");
 		System.out.println(Line.sLine(50));
 		System.out.print("선택 >>");
 		String strMenu = scan.nextLine();
@@ -41,8 +42,13 @@ public class InputServiceImplV1 implements InputService {
 	public String inputContent() {
 		System.out.println("할일 >> ");
 		String content = scan.nextLine();
-		
 		return content;
+	}
+
+	@Override
+	public Integer selectTodo() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

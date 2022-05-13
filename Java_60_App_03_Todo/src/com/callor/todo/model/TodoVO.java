@@ -43,6 +43,7 @@ public class TodoVO {
 		}else {
 			compStr= "완료됨";
 		}
+		result += String.format("%s\t", tContent);
 		result += String.format("%s", compStr);
 		return result;
 	}
