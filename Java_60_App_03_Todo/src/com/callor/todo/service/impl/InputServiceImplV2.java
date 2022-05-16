@@ -12,7 +12,7 @@ public class InputServiceImplV2 extends InputServiceImplV1 {
 	}
 	@Override
 	public String inputContent() {
-		System.out.print("할일(QUIT:종료) >> ");
+		System.out.print("변경할 내용 작성(QUIT:종료) >> ");
 		String content = scan.nextLine();
 		return content;
 	}

@@ -18,7 +18,17 @@ public interface TodoService {
 	
 	//Todo 내용 변경하기
 	//할일을 완료했을때 사용할 method
-	public void update(TodoVO tVO);
+	//public void update(TodoVO tVO);
+	
+	/**
+	 * 
+	 *  2022-05-13 설계변경
+	 *  method를 변경하기
+	 * 		TodoList 의 item index 와 content 를  매개변수로 바다
+	 * 		
+	 */
+	public void update(Integer num, String content);
+	
 	
 	//할일을 완료했을때 사용할 method
 	public void compTodo(Integer num);

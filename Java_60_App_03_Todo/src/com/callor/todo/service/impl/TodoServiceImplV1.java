@@ -92,12 +92,6 @@ public class TodoServiceImplV1 implements TodoService{
 	}
 
 	@Override
-	public void update(TodoVO tVO) {
-		
-		
-	}
-
-	@Override
 	public void saveTodo(String fileName) throws IOException {
 		
 		FileWriter writer = null;
@@ -174,6 +168,12 @@ public class TodoServiceImplV1 implements TodoService{
 		 * 
 		 * eTime = tVO.getEtime() == null || tVO.getEtime().isEmpty() ? eTime : null;
 		 */	
+		
+	}
+
+	@Override
+	public void update(Integer num, String content) {
+		// TODO Auto-generated method stub
 		
 	}
 

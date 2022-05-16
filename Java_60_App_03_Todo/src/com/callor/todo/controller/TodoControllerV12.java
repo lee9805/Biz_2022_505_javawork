@@ -7,14 +7,14 @@ import com.callor.todo.model.TodoVO;
 import com.callor.todo.service.InputService;
 import com.callor.todo.service.TodoService;
 import com.callor.todo.service.impl.InputServiceImplV2;
-import com.callor.todo.service.impl.TodoServiceImplV1;
+import com.callor.todo.service.impl.TodoServiceImplV2;
 import com.callor.utils.Line;
 
 public class TodoControllerV12 {
 
 	public static void main(String[] args) throws IOException {
 		
-		TodoService toService = new TodoServiceImplV1();
+		TodoService toService = new TodoServiceImplV2();
 		InputService inService = new InputServiceImplV2();
 		
 		while(true) {
@@ -43,9 +43,22 @@ public class TodoControllerV12 {
 				System.out.println(Line.dLine(60));
 				System.out.println("내용을 변경할 할일을 선택하세요");
 				Integer num = inService.selectTodo();
-				
-				// 할일을 입력받고
-				//입력받은 내용을 선택한 Todo의 반영하기
+				String content = inService.inputContent();
+				if(content.equals("QUIT"))break;
+				toService.update(num, content);
+				/*
+				 * // 할일을 입력받고 //입력받은 내용을 선택한 Todo의 반영하기
+				 * 
+				 * TodoVO tVO; try { tVO = todoList.get(num -1);
+				 * 
+				 * } catch (Exception e) { // TODO: handle exception
+				 * System.out.println("할일 리스트를 잘못 선택"); System.out.println("리스트 범위 넘어감");
+				 * continue; }
+				 * 
+				 * System.out.println(Line.dLine(60)); System.out.println("변경할 내용을 입력하세요");
+				 * System.out.println(Line.sLine(60)); String content =
+				 * inService.inputContent();
+				 */
 				
 			}
 			}else if(mainMenu == 4) {
@@ -76,7 +89,7 @@ public class TodoControllerV12 {
 
 	private static void printTodo(List<TodoVO> toVO) {
 		System.out.println(Line.dLine(50));
-		System.out.print("no\t");
+		System.out.print("No\t");
 		System.out.print("시작일자\t");
 		System.out.print("시작시간\t");
 		System.out.print("할일\t");
