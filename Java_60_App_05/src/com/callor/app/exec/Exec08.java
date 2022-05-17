@@ -24,7 +24,7 @@ public class Exec08 {
 				System.out.println(reader);
 			}
 				buffer.close();
-				fileReader.close();
+				fileReader.close(); 
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
