@@ -64,9 +64,13 @@ public class Exec05 {
 		// ListVO 리스트의 2번째 데이터를 gang 데이터로 변경하고 싶다
 		// ListVO.add(AddressVO) : 데이터를 추가하기
 		ListVO.set(2, adVO); //  2번 데이터를 새러운걸로 변경하는것
-		
 		v1.printAddrList(ListVO);
-		
+		for(int i =0; i < ListVO.size(); i++) {
+			for(int j = + 1; j < ListVO.size(); j++) {
+				if(ListVO.get(i).getAge() > ListVO.get(j).getAge()) {
+				}
+			}
+		}
 		
 	}
 	
