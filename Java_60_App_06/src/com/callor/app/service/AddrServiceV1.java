@@ -34,6 +34,17 @@ public class AddrServiceV1 {
 
 	public void printAddrList(List<AddressVO> ListVO) {
 
+		for(int i = 0; i < ListVO.size(); i++) {
+			for(int j = i +1; j < ListVO.size(); j++) {
+				if(ListVO.get(i).getAge() > ListVO.get(j).getAge()) {
+					AddressVO vo = ListVO.get(j);
+					ListVO.set(j, ListVO.get(i));
+					ListVO.set(i, vo);
+				}
+			}
+		}
+		System.out.println(ListVO);
+		
 	}
 
 }

@@ -54,8 +54,6 @@ public class Exec05 {
 		AddrServiceV1 v1 = new AddrServiceV1();
 
 		//3명의 데이터 출력하기
-		v1.printAddr(ListVO);
-
 		adVO =AddressVO.builder()
 						.name("gang")
 						.tel("01-4444-4444")
@@ -65,12 +63,6 @@ public class Exec05 {
 		// ListVO.add(AddressVO) : 데이터를 추가하기
 		ListVO.set(2, adVO); //  2번 데이터를 새러운걸로 변경하는것
 		v1.printAddrList(ListVO);
-		for(int i =0; i < ListVO.size(); i++) {
-			for(int j = + 1; j < ListVO.size(); j++) {
-				if(ListVO.get(i).getAge() > ListVO.get(j).getAge()) {
-				}
-			}
-		}
 		
 	}
 	
