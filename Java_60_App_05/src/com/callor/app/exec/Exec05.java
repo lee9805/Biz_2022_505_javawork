@@ -1,50 +1,69 @@
 package com.callor.app.exec;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.callor.app.model.AddressVO;
+import com.callor.app.service.AddrServiceV1;
+
 public class Exec05 {
 
 	public static void main(String[] args) {
 		
-		int[] nums = new  int[100];
-		for(int i = 0; i < nums.length; i++) {
-			nums[i] = (int)(Math.random() * 91 ) +10;
-		}
 		/*
-		 * 배역 100개에 대하여 반복하면서
-		 * 각 요소값에 대하여 2부터 요소값까지 반복하면서
-		 * index 와 나머지 연사을 수행하여 0 나오면 break
-		 * 		=> 소수가 아니다
-		 * 각 요소값이 소이려면 index 와 나머지 연산에서
-		 * 		한번도 0이 나오면 안된다
-		 * 		즉 if 조건이 한번도 true 가 아니어야 하고
-		 * 		break 가 실행되지 않아야 한다
-		 * break 실행되지 않고 안쪽 for() 가 완전 수행되면?
-		 * 		어떤 일이 발생하는가를 보면된다
+		 * List : interface,  데이터 그룹을 저장하기 위한 type
+		 * 			Collections type 
+		 * 다수의 데이터를 저장하고 연산에 사용하기 위한 데이터 type
+		 * List를 선언할때는 Generic type을 지정한다
+		 * 		List 에 add 하는 데이터를 제한하여
+		 *		잘못도니 데이터가 add 되는것을 방지하기 위함
+		 *		2. 메모리 낭비를 막고 성능상 잇점이 있기 때문에
+		 *아래 선언된 List 는 Generic type 이 AddressVO이다
+		 *여기 List에 데이터를 추가하려면 먼저 AddressVO type의 
+		 *		vo 객체를 만들고, 데이터를 저장한 다음 add 한다
 		 */
-		for(int j = 0; j < nums.length; j ++) {
-			int index = 0;
-			
-			// nums[j] 값이9 라고 했을때
-			// 2~ 8까지 반복실행된다
-			for(index = 2; index < nums[j]; index++ ) {
-				// 9 % 2 는 나머지가 1, 9 % 3 은 나머지가 0이 된다
-				// 9 % 3 이  0이되는 수간 break 를 만나서 for 가 중단
-				if(nums[j] % index ==0 ) {
-					break;
-				}//end if
-			}//end for(index)
-			
-			//내부의 break가 실행되면 여기로 탈출한다
-			
-		// break를 만나지 않았을때
-		// nums[j] 값을 index 값이 같다
-		// index  값이 같거나 큰가 비교해본다
-		// true 가 된다는 것은 break 를 만나지 않았다는 것이다
-		if(nums[j] <= index) {
-			System.out.println(nums[j] + "는 소수");
-		} else {
-			System.out.println(nums[j] +"는 소수가 아님");
-		}
+		List<AddressVO> ListVO = new ArrayList<>();
+		
+		AddressVO adVO = new AddressVO();
+		
+		/*
+		 * VO 데이터를 List 에 add 하기 위해서는
+		 * 항상 새로운 VO를 생성하고 데이터를 setting 하고 add해야 한다
+		 */
+		adVO.setName("hong");
+		adVO.setAge(21);
+		adVO.setAddr("서울시");
+		adVO.setTel("010-111-1111");
+		ListVO.add(adVO);
+		
+		adVO = new AddressVO();
+		adVO.setName("lee");
+		adVO.setAge(52);
+		adVO.setAddr("광주시");
+		adVO.setTel("010-444-444");
+		ListVO.add(adVO);
+
+		adVO = new AddressVO();
+		adVO.setName("sung");
+		adVO.setAge(34);
+		adVO.setAddr("광주시");
+		adVO.setTel("010-4441-4441");
+		ListVO.add(adVO);
+		
+	
+		AddrServiceV1 v1 = new AddrServiceV1();
+
+		//3명의 데이터 출력하기
+		adVO =AddressVO.builder()
+						.name("gang")
+						.tel("01-4444-4444")
+						.age(44)
+						.build();
+		// ListVO 리스트의 2번째 데이터를 gang 데이터로 변경하고 싶다
+		// ListVO.add(AddressVO) : 데이터를 추가하기
+		ListVO.set(2, adVO); //  2번 데이터를 새러운걸로 변경하는것
+		v1.printAddrList(ListVO);
+		
 	}
 	
-}
 }

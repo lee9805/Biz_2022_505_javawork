@@ -2,7 +2,7 @@ package com.callor.app.exec;
 
 import com.callor.app.model.AddressVO;
 
-public class Exec02 {
+public class Exec3 {
 
 	public static void main(String[] args) {
 

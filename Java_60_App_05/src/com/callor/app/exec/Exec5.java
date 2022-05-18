@@ -7,7 +7,7 @@ import com.callor.app.model.AddressVO;
 import com.callor.app.service.AddrServiceV1;
 import com.callor.utils.Line;
 
-public class Exec03 {
+public class Exec5 {
 
 	public static void main(String[] args) {
 		
@@ -27,13 +27,14 @@ public class Exec03 {
 	for(AddressVO vo : addrs) {
 		System.out.println(vo.toString());
 	}
-	int size = addrs.size();
-	for(int i =0 ; i <size ; i++) {
-		for(int j = i +1 ; j <size ;j++ ) {
-			if(addrs.get(i).getAge() > addrs.get(j).getAge()) {
-				AddressVO _tVO = addrs.get(i);
+	//이름순서로 오름차순 정렬
+	int size = addrs.size(); 
+	for(int i =0; i < size; i++) {
+		for(int j = i +1; j < size; j++) {
+			if(addrs.get(i).getName().compareTo(addrs.get(j).getName()) > 0) {
+				AddressVO vo = addrs.get(i);
 				addrs.set(i, addrs.get(j));
-				addrs.set(j, _tVO);
+				addrs.set(j, vo);
 			}
 		}
 	}
